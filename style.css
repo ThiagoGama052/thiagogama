@@ -1,0 +1,68 @@
+/* Estilo básico do corpo */
+body {
+    color: white;
+    background-color: black;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do cabeçalho */
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: solid 2px rgb(42, 122, 228);
+    font-size: 32px;
+    color: rgb(42, 122, 228);
+}
+
+/* Estilo da seção de vídeos */
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+/* Estilo para cada item de vídeo */
+.video-item {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-item h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* Efeito de hover para os vídeos */
+.video-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-item iframe {
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .video-item {
+        width: 100%;
+    }
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #ccc;
+    margin-top: 40px;
+}

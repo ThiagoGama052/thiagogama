@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALURAFLIX</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Fonte personalizada via Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #141414;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e50914;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-item {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Efeito ao passar o mouse */
+        .video-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(229, 9, 20, 0.8);
+        }
+
+        .video-description {
+            padding: 10px 0;
+        }
+
+        .video-description h2 {
+            font-size: 1.2rem;
+            margin: 5px 0;
+            color: #fff;
+        }
+
+        .video-description p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .play-button, .queue-button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .play-button:hover, .queue-button:hover {
+            background-color: #b5070f;
+        }
+
+        /* Fila de vídeos */
+        #video-queue {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        #video-queue h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .queued-video {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header>ALURAFLIX</header>
+
+    <!-- Corpo da página -->
+    <main>
+        <!-- Seção de vídeos -->
+        <section class="video-grid">
+            <!-- Vídeo 1 -->
+            <div class="video-item">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/gt_fAE1Eg2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="video-description">
+                    <h2>ATRAVÉS DO ARANHAVERSO SUPERA O PRIMEIRO FILME?</h2>
+                    <p>#homem-aranha</p>
+                    <button class="play-button" onclick="playVideo('ATRAVÉS DO ARANHAVERSO SUPERA O PRIMEIRO FILME?')">Assistir</button>
+                    <button class="queue-button" onclick="addToQueue('ATRAVÉS DO ARANHAVERSO SUPERA O PRIMEIRO FILME?')">Adicionar à fila</button>
+                </div>
+            </div>
+
+            <!-- Vídeo 2 -->
+            <div class="video-item">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/5UVaA6SGRZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="video-description">
+                    <h2>GUARDIÕES DA GALÁXIA VOL. 3: AVALIAÇÃO</h2>
+                    <p>#guardioes-da-galaxia</p>
+                    <button class="play-button" onclick="playVideo('GUARDIÕES DA GALÁXIA VOL. 3: AVALIAÇÃO')">Assistir</button>
+                    <button class="queue-button" onclick="addToQueue('GUARDIÕES DA GALÁXIA VOL. 3: AVALIAÇÃO')">Adicionar à fila</button>
+                </div>
+            </div>
+
+            <!-- Mais vídeos... -->
+            <!-- Adicione mais vídeos aqui conforme o formato acima -->
+        </section>
+
+        <!-- Seção de Fila de Vídeos -->
+        <section id="video-queue">
+            <h2>Fila de Vídeos</h2>
+            <div id="queued-videos-list">
+                <!-- Os vídeos adicionados à fila aparecerão aqui -->
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Função para adicionar um vídeo à fila
+        function addToQueue(videoTitle) {
+            const queue = document.getElementById('queued-videos-list');
+            const videoItem = document.createElement('div');
+            videoItem.className = 'queued-video';
+            videoItem.textContent = videoTitle;
+            queue.appendChild(videoItem);
+        }
+
+        // Função para simular a reprodução de vídeo
+        function playVideo(videoTitle) {
+            alert('Reproduzindo: ' + videoTitle);
+        }
+    </script>
+
+</body>
+</html>
